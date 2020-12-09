@@ -4,6 +4,8 @@
 (defrecord RefMap [key]
   ig/RefLike
   (ref-key [_] key)
+  (ref-mandatory-keys [_] #{})
+  (ref-all-keys [_] #{key})
   (ref-resolve [_ config resolvef]
     (into {} (for [[k v] (ig/find-derived config key)]
                [k (resolvef k v)]))))
