@@ -1,12 +1,10 @@
-## README
-
-STATUS: Pre-alpha, in design and prototyping phase.
-
-#### About
+== README
 
 `tape.refmap`
 
-- see [this](https://github.com/weavejester/integrant/pull/64) Integrant PR and associated issues.
+=== About
+
+- see https://github.com/weavejester/integrant/pull/64[this] Integrant PR and associated issues.
 - aims to support both Clojure & ClojureScript
 
 The refmap construct is similar to refset, but resolves to a map from
@@ -14,9 +12,10 @@ keys to resolved refs, rather than a set of refs; it is useful when the
 keys are meaningful to the logic beyond just being a slot in the config
 map, and are required in further logic.
 
-#### Usage
+=== Usage
 
-```clojure
+[source,clojure]
+----
 (ns my-ns
   (:require [tape.refmap :as rm]))
 
@@ -27,9 +26,9 @@ map, and are required in further logic.
 ;; and extra `rm/readers` reader tags.
 (ig/read-string {:readers rm/readers}
                 "{:foo/a #tape/refmap :foo/b, :foo/b 1}")
-```
+----
 
-#### License
+=== License
 
 Copyright © 2019 clyfe
 
